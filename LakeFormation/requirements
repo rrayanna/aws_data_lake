@@ -1,0 +1,25 @@
+Environment - Dynamic
+List Access - Dynamic based on Table Name
+SAML Role Dict with corresponding SVC Acct and QS Group.
+
+## Goal ###
+Grants - SAML Role is the driver
+Revokes - SAML Role is the driver
+SAML Role is the driver
+    Corresponding SVC Acct and QS Group should have access
+
+### Lake Formation ###
+    List Access - Environment Based get all tables from athena. Part of
+        Athena Query to get all tables
+            Submit Query
+            Wait for it to complete
+        Pagination to get the results to CSV
+
+Prepare SAML Role to SVC and Qlik Grouping List
+    Grant Access - grant to SVC and Quick Sight Accounts, based on SAML Role mapping
+        SAML Role is the driver
+            For each SAML Role, create separate access CSV files
+
+## requirements
+pandas
+boto3
